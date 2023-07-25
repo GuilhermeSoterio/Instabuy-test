@@ -1,10 +1,9 @@
 "use client";
-import "./styles.css";
+
 import { Item } from "@/types/types";
 import useCarousel from "@/hooks/useCarousel";
 import { Arrow } from "./Arrow";
 import { PlusButton } from "./plus-button";
-import produtojpeg from "../../common/produto.jpeg";
 import * as S from "./styles";
 import { useDataLayoutContext } from "../../context/DataLayoutContext";
 
@@ -14,8 +13,6 @@ interface CarouselProps {
 }
 
 function Carousel({ items, categorie }: CarouselProps) {
-  console.log("items ", items);
-  console.log("categorie ", categorie);
   const { carousel, isBeginning, isEnd, handleLeftClick, handleRightClick } =
     useCarousel();
 
