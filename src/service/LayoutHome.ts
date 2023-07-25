@@ -1,18 +1,8 @@
 import api from "./api";
-
-interface Banner {
-  id: string;
-  title: string;
-  image_url: string;
-}
-
-interface CollectionItem {
-  id: string;
-  title: string;
-  slug: string;
-}
+import { CollectionItem, Banner } from "@/types/types";
 
 interface LayoutData {
+  data: { banners: any; collection_items: any; };
   banners: Banner[];
   collection_items: CollectionItem[];
 }
@@ -24,9 +14,11 @@ class LayoutHome {
   private async fetchData(): Promise<void> {
     try {
       const response = await api.get<LayoutData>("layout?subdomain=supermercado");
-      const { banners, collection_items } = response.data;
+      console.log("response ", response)
+      const { banners, collection_items } = response.data.data;
       this.banners = banners;
       this.collectionItems = collection_items;
+      console.log("collectionItems ", collection_items)
     } catch (error) {
       throw new Error("Erro ao buscar dados do layout.");
     }

@@ -3,8 +3,10 @@
   --border-radius: 12px;
   --text-dark: #2D2E2F;
   --bg-secondary: #F3F5F6;
-  --green: #43b02a;
   --black: black;
+  --ib-colors-brand-primary: #43b02a;
+  --ib-colors-brand-tertiary: #e91e63;
+  --ib-colors-gray-dark: #707070;
 }
 
 * {
@@ -17,4 +19,5 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #F9F9F9;
 }
